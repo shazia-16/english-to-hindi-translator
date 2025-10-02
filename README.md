@@ -55,3 +55,71 @@ python translator.py
 Here is a sample screenshot of the translator in action:
 
 ![Translator Screenshot](screenshot.png)
+
+
+### How It Works
+
+1. **Model Initialization**
+```python
+   model_name = "Helsinki-NLP/opus-mt-en-hi"
+   tokenizer = MarianTokenizer.from_pretrained(model_name)
+   model = MarianMTModel.from_pretrained(model_name)
+
+Specifies the model name for easy reference
+Loads the pre-trained MarianTokenizer and MarianMTModel
+
+
+Translation Function
+
+```python
+def translate_en_to_hi(sentences):
+       translated = []
+       for sentence in sentences:
+           tokens = tokenizer(sentence, return_tensors="pt", padding=True)
+           translation = model.generate(**tokens)
+           hindi_text = tokenizer.decode(translation[0], skip_special_tokens=True)
+           translated.append(hindi_text)
+       return translated
+
+Function Purpose: Takes a list of English sentences and returns Hindi translations
+Tokenization: Converts each sentence into PyTorch tensors with padding
+Generation: Model produces translation tokens
+Decoding: Converts tokens back to readable Hindi text (removing special tokens)
+Batch Processing: Loops through all sentences and stores translations
+
+
+Input Data
+
+30 predefined English sentences in a list
+Covers diverse contexts: greetings, emotions, questions, statements, hobbies
+Examples: "Hello!", "How are you?", "I love programming.", "My name is Shazia."
+
+
+Translation Execution
+
+```python
+hindi_translations = translate_en_to_hi(english_sentences)
+
+Calls the translation function with the list of English sentences
+Returns a list of Hindi translations in the same order
+
+
+Output Display
+
+```python
+for en, hi in zip(english_sentences, hindi_translations):
+       print(f"{en} → {hi}")
+
+Uses zip() to pair each English sentence with its Hindi translation
+Displays in format: English sentence → हिंदी अनुवाद
+Arrow (→) separator for clear visualization
+
+Key Features
+
+✅ Custom translation function for reusability
+✅ Batch processing of 30 sentences
+✅ PyTorch tensor-based processing
+✅ Automatic padding for consistent input sizes
+✅ Context-aware translation
+✅ Handles various sentence structures (questions, statements, exclamations)
+✅ Clean and readable output format with arrow separator
