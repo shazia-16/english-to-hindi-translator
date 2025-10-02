@@ -12,6 +12,27 @@ It takes 30 English sentences and translates them into Hindi.
 
 ---
 
+## 🛠️ Tech Stack
+
+### Programming Language
+- **Python 3.x** - Core programming language used for the entire project
+
+### Libraries and Frameworks
+
+1. **Transformers (Hugging Face)**
+   - Purpose: Provides access to pre-trained NLP models
+   - Specific model used: `Helsinki-NLP/opus-mt-en-hi`
+   - Why: This library simplifies the implementation of state-of-the-art translation models without requiring extensive training
+
+2. **MarianMT Model**
+   - A neural machine translation model specifically trained for English to Hindi translation
+   - Part of the OPUS-MT project (Open Parallel Corpus - Machine Translation)
+   - Advantage: Optimized for translation tasks with high accuracy
+
+3. **MarianTokenizer**
+   - Preprocesses input text by converting it into tokens that the model can understand
+   - Handles special characters and maintains context
+
 ## ⚙️ Installation & Usage
 
 1. Clone this repository:
