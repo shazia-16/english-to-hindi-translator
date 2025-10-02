@@ -1,4 +1,4 @@
-# English to Hindi Translator 🇮🇳
+# English to Hindi Translator
 
 This is a simple **English → Hindi language translator** built using a **Hugging Face pretrained model** (`Helsinki-NLP/opus-mt-en-hi`).  
 It takes 30 English sentences and translates them into Hindi.
