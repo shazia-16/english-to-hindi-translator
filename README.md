@@ -71,7 +71,7 @@ Loads the pre-trained MarianTokenizer and MarianMTModel
 
 Translation Function
 
-```python
+python
 def translate_en_to_hi(sentences):
        translated = []
        for sentence in sentences:
@@ -97,7 +97,7 @@ Examples: "Hello!", "How are you?", "I love programming.", "My name is Shazia."
 
 Translation Execution
 
-```python
+python
 hindi_translations = translate_en_to_hi(english_sentences)
 
 Calls the translation function with the list of English sentences
@@ -106,7 +106,7 @@ Returns a list of Hindi translations in the same order
 
 Output Display
 
-```python
+python
 for en, hi in zip(english_sentences, hindi_translations):
        print(f"{en} → {hi}")
 
