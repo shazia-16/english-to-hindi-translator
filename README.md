@@ -28,3 +28,9 @@ pip install torch transformers sentencepiece
 
 4. Run the translator:
 python translator.py
+
+## 📸 Example Output
+
+Here is a sample screenshot of the translator in action:
+
+![Translator Screenshot](screenshot.png)
